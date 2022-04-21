@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkSoNguyenTo(a){
+        if(a===2 || a === 3) {
+            document.write(a + ' ,')
+        } else if (a>3) {
+            let check = true
+            for (let i = 2 ; i <= a/2;i++) {
+                if (a%i===0) {
+                    check = false
+                    break
+                }
+            }
+            if ( check) {
+                document.write(a + ' ,')
+            }
+        }
+    }
+
+    let b=0
+    document.write('Cac so nguyen to nho hon 1000 la:')
+    while (b<1000){
+        checkSoNguyenTo(b)
+        b++
+    }
+</script>
+</body>
+</html>
