@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkArry(a,b){
+        let check = false;
+        let count = 0;
+        for (let i = 1; i < a.length ; i ++){
+            if (b === a[i]) {
+                check= true;
+                count++
+            }
+        }
+        if (check) {
+           return  document.write('so lan xuat hien cua ' + b + ' la ' + count + ' trong mang '+a)
+        } else {
+           return  document.write(b + ' khong co trong mang  ' + a)
+        }
+    }
+
+    let a = [ 2,4,7,4,5,5,7,7,]
+    let b = parseInt(prompt('Nhap so nguyen'))
+    checkArry(a,b)
+</script>
+</body>
+</html>

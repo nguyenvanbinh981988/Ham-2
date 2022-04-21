@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function changePosition(a,b){
+        let tem = a;
+        a = b ;
+        b = tem;
+        return a + ' , '+ b;
+    }
+
+    let a = prompt('Nhap a')
+    let b = prompt('Nhap b')
+    document.write(changePosition(a,b))
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkSoNguyenDuong(a){
+        if (a>0 && a%1===0){
+            document.write(a + ' la so nguyen duong')
+        } else {
+            document.write(a + ' khong phai la so nguyen duong')
+        }
+    }
+
+    let a= parseFloat(prompt('nhap so can check'))
+    checkSoNguyenDuong(a)
+</script>
+</body>
+</html>
