@@ -7,8 +7,8 @@
 <body>
 <h1>Convert from feet to meters or from meters to feet</h1>
 <input id="Input" type="Number" value=""> <br>
-<button type="button" onclick="Meters()">Convert from feet to meters</button>
-<button type="button" onclick="foot()">Convert from meters to feet</button> <br>
+<button type="button" onclick="foot()">Convert from feet to meters</button>
+<button type="button" onclick="Meters()">Convert from meters to feet</button> <br>
 <p>Result: <span id="Result"></span></p>
 </body>
 </html>
@@ -21,13 +21,13 @@
     }
 
     function foot() {
-        let b = document.getElementById('Input').value
+        let b = parseFloat(document.getElementById('Input').value)
         document.getElementById('Result').innerText= feetToMeters(b) + ' meters'
     }
 
 
     function Meters() {
-        let b = document.getElementById('Input').value
+        let b = parseFloat(document.getElementById('Input').value)
         document.getElementById('Result').innerText= metersToFeet(b) + ' feet'
     }
 </script>
