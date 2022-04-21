@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Convert from feet to meters or from meters to feet</h1>
+<input id="Input" type="Number" value=""> <br>
+<button type="button" onclick="Meters()">Convert from feet to meters</button>
+<button type="button" onclick="foot()">Convert from meters to feet</button> <br>
+<p>Result: <span id="Result"></span></p>
+</body>
+</html>
+<script>
+    function feetToMeters(a){
+        return 0.305*a
+    }
+    function metersToFeet(a) {
+        return 3.279 * a
+    }
+
+    function foot() {
+        let b = document.getElementById('Input').value
+        document.getElementById('Result').innerText= feetToMeters(b) + ' meters'
+    }
+
+
+    function Meters() {
+        let b = document.getElementById('Input').value
+        document.getElementById('Result').innerText= metersToFeet(b) + ' feet'
+    }
+</script>
