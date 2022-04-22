@@ -30,9 +30,9 @@
 </form>
 <h1>Display All Product</h1>
 <table>    <tr>
-    <th>Product Name</th>
-    <td></td>
-    <td id="productNumber"></td>
+    <th style="width: 150px">Product Name</th>
+    <td style="width: 100px"></td>
+    <td style="width: 100px" id="productNumber"></td>
 </tr>
 </table>
 <table id="display"></table>
@@ -80,8 +80,10 @@
                         hienthi()
                     }
 
-                    function hienthi() {
+                    function hienthi(){
                         document.getElementById('display').innerHTML = board.join('')
+                        document.getElementById('productNumber').innerText= board.length + 'Product'
+
                     }
 
 
