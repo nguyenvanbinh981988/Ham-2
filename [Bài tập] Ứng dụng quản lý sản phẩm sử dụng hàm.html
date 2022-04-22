@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            background-color: lightskyblue;
+            height: 50px;
+            width: 250px
+        }
+        #F1{
+            margin-top: 30px;
+            text-align: center;
+        }
+        #clo{
+            background-color: orange;
+        }
+        tr:nth-child(even) {
+            background-color: orchid;
+        }
+    </style>
+
+</head>
+<body>
+<h1>Add New Product</h1>
+<form id="F1">
+<input id="proName" type="text" value="" name="New Product"> <br>
+<button id="clo" type="button" value="Add" onclick="add()">Add</button>
+</form>
+<h1>Display All Product</h1>
+<table>    <tr>
+    <th>Product Name</th>
+    <td></td>
+    <td id="productNumber"></td>
+</tr>
+</table>
+<table id="display"></table>
+
+
+<script>
+        let board = [];
+        let num = 0;
+
+        function Edit(b,f) {
+            let a= parseInt(f)
+                let repair = prompt('Enter repair information')
+                for (let i = 0; i < board.length;i++) {
+                         if (str(b,a) === board[i]) {
+                           board[i] = str(repair,a)
+                         }
+                    }
+                    hienthi()
+            }
+
+                function Del(c,g) {
+                    for (let i = 0; i < board.length;i++) {
+                        if (str(c,g) === board[i]) {
+                            board.splice(i,1)
+                        }
+                    }
+                    hienthi()
+                }
+
+                function str(input,index) {
+                    let str = ''
+                    let Num = "'" + input + "'," + index
+                    str += '<tr>' + '<td id="' + index + '" style="width: 150px">' + input + '</td>'
+                        + '<td style="width: 100px"><button id="clo" onclick="Edit(' + Num + ')">Edit</button></td>'
+                        + '<td style="width: 100px"><button id="clo" onclick="Del(' + Num + ')">Delete</button></td>' + '</tr>'
+                    return str
+                }
+
+                function add() {
+                    num++
+                    let productName = document.getElementById('proName').value;
+                        if (productName !== '') {
+                            board.push(str(productName,num))
+                        }
+                        hienthi()
+                    }
+
+                    function hienthi() {
+                        document.getElementById('display').innerHTML = board.join('')
+                    }
+
+
+
+
+</script>
+</body>
+</html>
