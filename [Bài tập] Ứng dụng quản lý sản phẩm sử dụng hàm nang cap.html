@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            background-color: lightskyblue;
+            height: 100px;
+            width: 250px
+        }
+        #F1{
+            margin-top: 30px;
+            text-align: left;
+        }
+        #clo{
+            background-color: orange;
+        }
+        tr:nth-child(even) {
+            background-color: orchid;
+        }
+    </style>
+
+</head>
+<body>
+<h1>Add New Product</h1>
+<form id="F1">
+    Name:<input id="proName" type="text" value="" name="New Product"> <br>
+    Pic:<input id="proPic" type="text" value="" name="picture"> <br>
+    <button id="clo" type="button" value="Add" onclick="add()">Add</button>
+    <div id="change"></div>
+</form>
+<h1>Display All Product</h1>
+<table>    <tr>
+    <th style="width: 150px">Product Name</th>
+    <th style="width: 150px">picture</th>
+    <td style="width: 100px"></td>
+    <td style="width: 100px" id="productNumber"></td>
+</tr>
+</table>
+<table id="display"></table>
+
+
+<script>
+
+    function Edit(a,b,c){
+        let Num = "'" + a + "','" + b +"',"+ c
+        let  Edit = '<button id="clo" type="button" onClick="EditName(' + Num +')">Edit Name</button> ' +
+            '<button id="clo" type="button" onClick="EditPic(' + Num +')">Edit Picture</button>'
+        document.getElementById('change').innerHTML=Edit
+
+    }
+
+    function EditName(a,b,c) {
+        let repair = prompt('Enter repair information')
+        for (let i = 0; i < board.length; i++) {
+            if (str(a, b, c) === board[i]) {
+                board[i] = str(repair, b, c)
+            }
+        }
+        hienthi()
+    }
+
+    function EditPic(a,b,c) {
+        let repair = prompt('Enter repair information')
+        for (let i = 0; i < board.length; i++) {
+            if (str(a, b, c) === board[i]) {
+                board[i] = str(a, repair, c)
+            }
+        }
+        hienthi()
+    }
+
+    function Del(a,b,c) {
+        for (let i = 0; i < board.length; i++) {
+            if (str(a,b,c) === board[i]) {
+                board.splice(i, 1)
+            }
+        }
+        hienthi()
+    }
+
+     function str(name,pic,index) {
+         let str = ''
+         let Num = "'" + name + "','" +pic +"',"+ index
+         str += '<tr>' + '<td id="' + index + '" style="width: 150px">' + name + '</td>'
+             + '<td id="' + index + '" style="width: 150px"> <img src="' + pic + '"></td>'
+             + '<td style="width: 100px"><button id="clo" onclick="Edit(' + Num + ')">Edit</button></td>'
+             + '<td style="width: 100px"><button id="clo" onclick="Del(' + Num + ')">Delete</button></td>' + '</tr>'
+         return str
+     }
+
+
+
+
+    let board = [];
+    let index = 0;
+
+    function add() {
+        index++
+        let productName = document.getElementById('proName').value
+        let pic = document.getElementById('proPic').value
+        if (productName !== '' && pic !== '') {
+            board.push(str(productName,pic,index))
+        }
+        hienthi()
+    }
+
+    function hienthi(){
+        document.getElementById('display').innerHTML = board.join('')
+        document.getElementById('productNumber').innerText= board.length + 'Product'
+
+    }
+
+
+</script>
+</body>
+</html>
